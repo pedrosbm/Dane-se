@@ -51,7 +51,7 @@ const GameProvider = ({ children }: PropsWithChildren) => {
     }
 
     const resetBet = () => {
-        const updatedPlayers = players.map(player => ({ ...player, aposta: 0 }))
+        const updatedPlayers = players.map(player => ({ ...player, aposta: 0, scored: false }))
 
         setPlayers(updatedPlayers)
     }
@@ -73,7 +73,7 @@ const GameProvider = ({ children }: PropsWithChildren) => {
     return (
         <GameContext.Provider
             value={{
-                players, round, newPlayer, setRound, removePlayer, score, setBet, resetBet, unscore
+                players, round, newPlayer, setRound, removePlayer, score, setBet, resetBet, unscore, setPlayers
             }}>
             {children}
         </GameContext.Provider>

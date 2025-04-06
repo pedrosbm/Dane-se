@@ -11,7 +11,7 @@ import DialogModal from "../components/DialogModal"
 const Score = () => {
     const [visible, setVisible] = useState<boolean>(false)
 
-    const { round } = useContext(GameContext)
+    const { round, resetBet, setRound } = useContext(GameContext)
 
     const navigation = useNavigation<GameNavigationProp>()
 
@@ -26,6 +26,12 @@ const Score = () => {
         })
     }, [])
 
+    const nextRound = () => {
+        resetBet()
+        round + 1 == 13 ? navigation.navigate("end") : navigation.popToTop()
+        setRound(round + 1)
+    }
+
     return (
         <>
             {/* Tela */}
@@ -34,19 +40,19 @@ const Score = () => {
                     <Text style={{ textAlign: "center", fontSize: 40 }}>Round {round}</Text>
                     <Text>Conceda os pontos</Text>
                 </View>
-            
+
                 <View style={{ height: "80%" }}>
                     <Players fase={2} />
                 </View >
             </View>
-        
+
             {/* Caixa de dialogo */}
             <DialogModal
                 visible={visible}
                 setVisible={setVisible}
                 title="Cuidado."
                 description="Ao prosseguir para a próxima rodada não será possível alterar os pontos."
-                confirmAction={() => navigation.popToTop()}
+                confirmAction={() => nextRound()}
             />
         </>
     )

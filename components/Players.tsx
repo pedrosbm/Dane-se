@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, useContext } from "react"
+import React, { useContext } from "react"
 
 import { FlatList, View } from "react-native"
 import { GameContext } from "../context/GameContext"

@@ -1,34 +1,30 @@
-import React, { useContext, useEffect } from "react"
+import React, { useContext, useEffect, useState } from "react"
 
 import { View } from "react-native"
 import { GameContext } from "../context/GameContext"
-import { useNavigation } from "@react-navigation/native"
-import { GameNavigationProp } from "../types/navigation"
 import { Text, Button } from "react-native-paper"
 
-import Players from "../components/Players"
+import { Player } from "../types/player"
 
 const End = () => {
-    const { players, setPlayers, setRound } = useContext(GameContext)
+    const { players, setRound, setPlayers } = useContext(GameContext)
 
-    const navigate = useNavigation<GameNavigationProp>()
-    
+    const [sortedPlayer, setSortedPlayers] = useState<Player[]>()
+
     useEffect(() => {
-        setRound(0)
         const sortedPlayers = [...players].sort((a, b) => b.pontos - a.pontos)
-        setPlayers(sortedPlayers)
+        setSortedPlayers(sortedPlayers)
     }, [])
 
-    // const handleEnding = () => {
-    //     setPlayers([])
-    //     navigate("home")
-    // }
+    const handleEnding = () => {
+        setPlayers([])
+        setRound(0)
+    }
 
     return (
         <View style={{ padding: 20, height: "100%" }}>
             <Text style={{ textAlign: "center", fontSize: 40 }}>Resultado</Text>
-            {/* <Players removable={false} />
-            <Button mode="contained" onPress={handleEnding}>Finalizar</Button> */}
+            <Button mode="contained" onPress={handleEnding}>Finalizar</Button>
         </View>
     )
 }
