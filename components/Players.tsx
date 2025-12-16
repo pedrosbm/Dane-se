@@ -1,8 +1,8 @@
-import React, { useContext } from "react"
+import React, { PropsWithChildren, useContext } from "react"
 
 import { FlatList, View } from "react-native"
 import { GameContext } from "../context/GameContext"
-import { Avatar, Card, Text, IconButton } from "react-native-paper"
+import { Avatar, Card, Text, IconButton, Button } from "react-native-paper"
 
 import BetSelector from "./BetSelector"
 import ScoreButton from "./ScoreButton"
@@ -27,7 +27,6 @@ const Players = ({ fase }: PlayersProps) => {
                         </View>
                     </View>
 
-                    {/* Opções */}
                     <View style={{ justifyContent: "center", flexDirection: "row-reverse" }}>
                         {round == 0 && <IconButton size={40} onPress={() => removePlayer(item.nome)} iconColor={item.color.contrast} icon={"delete-circle"} />}
                         {fase == 2 && <ScoreButton player={item} />}

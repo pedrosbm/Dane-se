@@ -6,6 +6,8 @@ import { GameProvider } from "./context/GameContext"
 import Main from "./Main";
 
 const App = () => {
+	
+
 	return (
 		<PaperProvider theme={MD3LightTheme}>
 			<GameProvider>

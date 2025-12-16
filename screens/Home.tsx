@@ -10,12 +10,15 @@ const Home = () => {
     const navigate = useNavigation<SignUpNavigationProp>().navigate
 
     return (
-        <View style={{alignItems: "center", justifyContent: "center", height: "100%"}}>
+        <View style={{ alignItems: "center", justifyContent: "center", height: "100%" }}>
             <Image
-                source={require('../assets/DANE-SE.png')}
+                source={require('../assets/fodase-light.png')}
                 style={{ width: 300, height: 300 }}
             />
-            <Button onPress={() => navigate("cadastro")} mode="contained">Novo jogo</Button>
+
+            <View>
+                <Button icon={"play"} onPress={() => navigate("cadastro")} mode="contained">Novo jogo</Button>
+            </View>
         </View>
     )
 }

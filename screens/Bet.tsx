@@ -10,18 +10,9 @@ import Header from "../components/Header"
 import DialogModal from "../components/DialogModal"
 
 const Bet = () => {
-    const [visible, setVisible] = useState<boolean>(false)
-    const { round, setRound, resetBet } = useContext(GameContext)
+    const { round } = useContext(GameContext)
 
     const navigation = useNavigation<GameNavigationProp>()
-
-    const nextRound = () => {
-        if (round == 13) {
-            navigation.navigate("end")
-        }
-        setRound(round + 1)
-        resetBet()
-    }
 
     useEffect(() => {
         navigation.setOptions({

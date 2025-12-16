@@ -26,7 +26,7 @@ const Header = ({ title, actions }: HeaderProps) => {
 
             {/* Concatena ações para o cabeçalho */}
             {actions?.map((action) => (
-                <Appbar.Action key={actions.indexOf(action)} icon={action.icon} onPress={action.onPress} />
+                <Appbar.Action disabled={action.disabled} key={actions.indexOf(action)} icon={action.icon} onPress={action.onPress} />
             ))}
         </Appbar.Header>
     )

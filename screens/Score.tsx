@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react"
 import { View } from "react-native"
 import Players from "../components/Players"
-import { Text } from "react-native-paper"
+import { Button, Text } from "react-native-paper"
 import { GameContext } from "../context/GameContext"
 import { useNavigation } from "@react-navigation/native"
 import { GameNavigationProp } from "../types/navigation"
@@ -15,6 +15,12 @@ const Score = () => {
 
     const navigation = useNavigation<GameNavigationProp>()
 
+    const nextRound = () => {
+        resetBet()
+        round + 1 == 13 ? navigation.navigate("end") : navigation.popToTop()
+        setRound(round + 1)
+    }
+
     useEffect(() => {
         navigation.setOptions({
             header: () => <Header
@@ -26,11 +32,6 @@ const Score = () => {
         })
     }, [])
 
-    const nextRound = () => {
-        resetBet()
-        round + 1 == 13 ? navigation.navigate("end") : navigation.popToTop()
-        setRound(round + 1)
-    }
 
     return (
         <>
@@ -50,9 +51,9 @@ const Score = () => {
             <DialogModal
                 visible={visible}
                 setVisible={setVisible}
-                title="Cuidado."
-                description="Ao prosseguir para a próxima rodada não será possível alterar os pontos."
-                confirmAction={() => nextRound()}
+                title="Confirmação."
+                description="Todos os jogadores foram pontuados? (não será possível voltar a rodada)."
+                confirmAction={nextRound}
             />
         </>
     )
