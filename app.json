@@ -5,7 +5,7 @@
     "version": "1.1.0",
     "orientation": "portrait",
     "icon": "./assets/foda-se.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "splash": {
       "image": "./assets/foda-se.png",

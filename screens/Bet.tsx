@@ -1,16 +1,19 @@
-import React, { useContext, useEffect, useState } from "react"
+import React, { useContext, useEffect } from "react"
+
 import { GameContext } from "../context/GameContext"
-import { View } from "react-native"
+
 import { useNavigation } from "@react-navigation/native"
 import { GameNavigationProp } from "../types/navigation"
-import { Button, Dialog, Portal, Text } from "react-native-paper"
 
-import Players from "../components/Players"
+import { FlatList, View } from "react-native"
+import { Text } from "react-native-paper"
 import Header from "../components/Header"
-import DialogModal from "../components/DialogModal"
+import BetSelector from "../components/BetSelector"
+import PlayerCard from "../components/PlayerCard"
+import PaperView from "../components/PaperView"
 
 const Bet = () => {
-    const { round } = useContext(GameContext)
+    const { round, players } = useContext(GameContext)
 
     const navigation = useNavigation<GameNavigationProp>()
 
@@ -23,19 +26,21 @@ const Bet = () => {
                     onPress: () => navigation.navigate("score")
                 }]} />
         })
-    }, [])
+    }, [navigation])
 
     return (
-        <View style={{ height: "100%", padding: 10, gap: 10 }}>
+        <PaperView style={{ height: "100%", padding: 10, gap: 10 }}>
             <View style={{ alignItems: "center" }}>
                 <Text style={{ textAlign: "center", fontSize: 40 }}>Round {round}</Text>
                 <Text>Façam suas apostas</Text>
             </View>
 
-            <View style={{ height: "80%" }}>
-                <Players fase={1} />
+            <View style={{ height: "82%" }}>
+                <FlatList contentContainerStyle={{ display: "flex", gap: 5 }} data={players} renderItem={({ item }) => (
+                    <PlayerCard player={item} action={<BetSelector player={item} />} />
+                )} />
             </View >
-        </View>
+        </PaperView>
 
     )
 }

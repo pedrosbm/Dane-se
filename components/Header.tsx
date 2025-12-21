@@ -20,7 +20,7 @@ const Header = ({ title, actions }: HeaderProps) => {
     const navigation = useNavigation()
 
     return (
-        <Appbar.Header >
+        <Appbar.Header mode="center-aligned" elevated >
             {navigation.canGoBack() && <Appbar.BackAction onPress={() => navigation.goBack()} />}
             <Appbar.Content title={title} />
 

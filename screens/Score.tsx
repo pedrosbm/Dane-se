@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react"
 import { View } from "react-native"
-import Players from "../components/Players"
+import Players from "../components/PlayerCard"
 import { Button, Text } from "react-native-paper"
 import { GameContext } from "../context/GameContext"
 import { useNavigation } from "@react-navigation/native"

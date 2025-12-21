@@ -20,9 +20,65 @@ const GameContext = createContext<Context>({} as Context);
 
 const GameProvider = ({ children }: PropsWithChildren) => {
     // Estados gerenciados pelo contexto de jogo
-    const [players, setPlayers] = useState<Player[]>([]);
+    const [players, setPlayers] = useState<Player[]>([
+        {
+            nome: "pedro",
+            aposta: 0,
+            color: {contrast: "#fff", value: "#999"},
+            pontos: 0,
+            scored: false
+        }
+        ,{
+            nome: "pedro",
+            aposta: 0,
+            color: {contrast: "#fff", value: "#999"},
+            pontos: 0,
+            scored: false
+        },{
+            nome: "pedro",
+            aposta: 0,
+            color: {contrast: "#fff", value: "#999"},
+            pontos: 0,
+            scored: false
+        },{
+            nome: "pedro",
+            aposta: 0,
+            color: {contrast: "#fff", value: "#999"},
+            pontos: 0,
+            scored: false
+        },{
+            nome: "pedro",
+            aposta: 0,
+            color: {contrast: "#fff", value: "#999"},
+            pontos: 0,
+            scored: false
+        },{
+            nome: "pedro",
+            aposta: 0,
+            color: {contrast: "#fff", value: "#999"},
+            pontos: 0,
+            scored: false
+        },{
+            nome: "pedro",
+            aposta: 0,
+            color: {contrast: "#fff", value: "#999"},
+            pontos: 0,
+            scored: false
+        },{
+            nome: "pedro",
+            aposta: 0,
+            color: {contrast: "#fff", value: "#999"},
+            pontos: 0,
+            scored: false
+        },{
+            nome: "pedro",
+            aposta: 0,
+            color: {contrast: "#fff", value: "#999"},
+            pontos: 0,
+            scored: false
+        },
+    ]);
     const [round, setRound] = useState<number>(0);
-    const [fase, setFase] = useState<number>(0);
 
     const newPlayer = async (name: string) => {
         // Api de cores
