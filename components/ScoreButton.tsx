@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react"
+import React, { useContext } from "react"
 import { GameContext } from "../context/GameContext"
 import { Button } from "react-native-paper"
 import { Player } from "../types/player"

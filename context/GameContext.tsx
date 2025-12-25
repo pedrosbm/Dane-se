@@ -1,6 +1,5 @@
-import React from "react";
+import React, { createContext, PropsWithChildren, useState } from "react";
 
-import { createContext, PropsWithChildren, useState } from "react";
 import { Player } from "../types/player";
 
 type Context = {
@@ -21,59 +20,18 @@ const GameContext = createContext<Context>({} as Context);
 const GameProvider = ({ children }: PropsWithChildren) => {
     // Estados gerenciados pelo contexto de jogo
     const [players, setPlayers] = useState<Player[]>([
+        // TODO remover jogadores mocados
         {
             nome: "pedro",
             aposta: 0,
-            color: {contrast: "#fff", value: "#999"},
+            color: { contrast: "#fff", value: "#647933ff" },
             pontos: 0,
             scored: false
-        }
-        ,{
-            nome: "pedro",
+        },
+        {
+            nome: "monte",
             aposta: 0,
-            color: {contrast: "#fff", value: "#999"},
-            pontos: 0,
-            scored: false
-        },{
-            nome: "pedro",
-            aposta: 0,
-            color: {contrast: "#fff", value: "#999"},
-            pontos: 0,
-            scored: false
-        },{
-            nome: "pedro",
-            aposta: 0,
-            color: {contrast: "#fff", value: "#999"},
-            pontos: 0,
-            scored: false
-        },{
-            nome: "pedro",
-            aposta: 0,
-            color: {contrast: "#fff", value: "#999"},
-            pontos: 0,
-            scored: false
-        },{
-            nome: "pedro",
-            aposta: 0,
-            color: {contrast: "#fff", value: "#999"},
-            pontos: 0,
-            scored: false
-        },{
-            nome: "pedro",
-            aposta: 0,
-            color: {contrast: "#fff", value: "#999"},
-            pontos: 0,
-            scored: false
-        },{
-            nome: "pedro",
-            aposta: 0,
-            color: {contrast: "#fff", value: "#999"},
-            pontos: 0,
-            scored: false
-        },{
-            nome: "pedro",
-            aposta: 0,
-            color: {contrast: "#fff", value: "#999"},
+            color: { contrast: "#fff", value: "#d21" },
             pontos: 0,
             scored: false
         },
