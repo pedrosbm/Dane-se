@@ -19,23 +19,7 @@ const GameContext = createContext<Context>({} as Context);
 
 const GameProvider = ({ children }: PropsWithChildren) => {
     // Estados gerenciados pelo contexto de jogo
-    const [players, setPlayers] = useState<Player[]>([
-        // TODO remover jogadores mocados
-        {
-            nome: "pedro",
-            aposta: 0,
-            color: { contrast: "#fff", value: "#647933ff" },
-            pontos: 0,
-            scored: false
-        },
-        {
-            nome: "monte",
-            aposta: 0,
-            color: { contrast: "#fff", value: "#d21" },
-            pontos: 0,
-            scored: false
-        },
-    ]);
+    const [players, setPlayers] = useState<Player[]>([]);
     const [round, setRound] = useState<number>(0);
 
     // Gera uma cor aleatória dentro do espectro solicitado
