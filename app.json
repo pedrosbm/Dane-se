@@ -26,6 +26,11 @@
     "web": {
       "favicon": "./assets/foda-se.png",
       "backgroundColor": "#ffffff"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "daa3da88-78a8-4c6f-9390-8e0de081387a"
+      }
     }
   }
 }
