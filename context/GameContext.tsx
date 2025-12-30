@@ -38,12 +38,28 @@ const GameProvider = ({ children }: PropsWithChildren) => {
     ]);
     const [round, setRound] = useState<number>(0);
 
+    // Gera uma cor aleatória dentro do espectro solicitado
+    const generateRandomColor = () => {
+        const randInt = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+        const r = randInt(10, 200);
+        const g = randInt(70, 190);
+        const b = randInt(170, 210);
+
+        const toHex = (n: number) => n.toString(16).padStart(2, '0');
+        const value = `#${toHex(r)}${toHex(g)}${toHex(b)}`;
+
+        // Perceived brightness (0-255). Threshold chosen for readable contrast.
+        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+        const contrast = brightness > 186 ? '#000000' : '#ffffff';
+
+        return { value, contrast };
+    }
+
     const newPlayer = async (name: string) => {
         // Api de cores
-        const color = await fetch("https://www.thecolorapi.com/random")
-            .then(response => { return response.json() })
-            .then(json => { return { value: json.hex.value, contrast: json.contrast.value } })
-            .catch(error => { return { value: "#fff", contrast: "#999" } })
+
+        const color = generateRandomColor();
 
         setPlayers([...players, {
             nome: name,

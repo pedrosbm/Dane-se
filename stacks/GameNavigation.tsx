@@ -16,7 +16,7 @@ const GameNavigation = () => {
             <Stack.Navigator>
                 <Stack.Screen name='bet' component={Bet} />
                 <Stack.Screen name='score' component={Score} />
-                <Stack.Screen name='end' component={End} />
+                <Stack.Screen options={{headerShown: false}} name='end' component={End} />
             </Stack.Navigator>
         </NavigationContainer>
     );

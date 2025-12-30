@@ -71,17 +71,18 @@ const Cadastro = () => {
                         </View>
 
                         <View style={{ marginBottom: 80 }}>
-                            <TouchableWithoutFeedback
+                            {/* TODO */}
+                            {/* <TouchableWithoutFeedback
                                 onPress={Keyboard.dismiss}
                                 accessible={false}
-                            >
+                            > */}
                                 <TextInput
                                     label="Nome"
                                     value={nome}
                                     onChangeText={setNome}
                                     mode="outlined"
                                 />
-                            </TouchableWithoutFeedback>
+                            {/* </TouchableWithoutFeedback> */}
                         </View>
 
                         {/* TODO seletor de cores */}

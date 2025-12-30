@@ -6,14 +6,14 @@ import { useNavigation } from "@react-navigation/native"
 import { GameNavigationProp } from "../types/navigation"
 
 import { FlatList, View } from "react-native"
-import { Text } from "react-native-paper"
+import { Button, Text } from "react-native-paper"
 import Header from "../components/Header"
 import BetSelector from "../components/BetSelector"
 import PlayerCard from "../components/PlayerCard"
 import PaperView from "../components/PaperView"
 
 const Bet = () => {
-    const { round, players } = useContext(GameContext)
+    const { round, players, setRound } = useContext(GameContext)
 
     const navigation = useNavigation<GameNavigationProp>()
 
@@ -34,6 +34,8 @@ const Bet = () => {
                 <Text style={{ textAlign: "center", fontSize: 40 }}>Round {round}</Text>
                 <Text>Façam suas apostas</Text>
             </View>
+
+            {/* <Button onPress={() => setRound(12)}>A du</Button> */}
 
             <View style={{ height: "82%" }}>
                 <FlatList contentContainerStyle={{ display: "flex", gap: 5 }} data={players} renderItem={({ item }) => (
