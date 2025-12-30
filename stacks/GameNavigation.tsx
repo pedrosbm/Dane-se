@@ -1,16 +1,24 @@
 import React from 'react';
-import { GameNavigation } from '../types/navigation';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { View } from 'react-native';
-import { Text } from 'react-native-paper';
 
-const Stack = createNativeStackNavigator<GameNavigation>();
+import { GameNavigation as Navigation } from '../types/navigation';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
+
+import Bet from '../screens/Bet';
+import Score from '../screens/Score';
+import End from '../screens/End';
+
+const Stack = createNativeStackNavigator<Navigation>();
 
 const GameNavigation = () => {
     return (
-        <View>
-            <Text>Sei n</Text>
-        </View>
+        <NavigationContainer>
+            <Stack.Navigator>
+                <Stack.Screen name='bet' component={Bet} />
+                <Stack.Screen name='score' component={Score} />
+                <Stack.Screen options={{headerShown: false}} name='end' component={End} />
+            </Stack.Navigator>
+        </NavigationContainer>
     );
 };
 

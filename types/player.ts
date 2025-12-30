@@ -5,7 +5,8 @@ type Player = {
         contrast: string
     },
     pontos: number,
-    aposta: number
+    aposta: number,
+    scored: boolean
 }
 
 export type { Player };

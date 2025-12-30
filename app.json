@@ -1,35 +1,31 @@
 {
   "expo": {
-    "name": "Dane-se",
-    "slug": "danese",
+    "name": "fodase",
+    "slug": "fodase",
     "version": "1.1.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.jpg",
-    "userInterfaceStyle": "light",
+    "icon": "./assets/foda-se.png",
+    "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/icon.jpg",
+      "image": "./assets/foda-se.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.pedrosbm.fodase"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/icon.jpg",
+        "foregroundImage": "./assets/foda-se.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.pedrosbm.danese"
+      "package": "com.pedrosbm.fodase"
     },
     "web": {
-      "favicon": "./assets/icon.jpg",
+      "favicon": "./assets/foda-se.png",
       "backgroundColor": "#ffffff"
-    },
-    "extra": {
-      "eas": {
-        "projectId": "c4873898-ec37-482f-bea9-263746236070"
-      }
     }
   }
 }

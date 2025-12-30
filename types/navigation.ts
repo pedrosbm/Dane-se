@@ -1,7 +1,9 @@
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
 type GameNavigation = {
-    // TODO implementar nova extrutura de telas do jogo principal
+    bet: undefined,
+    score: undefined,
+    end: undefined
 }
 type GameNavigationProp = NativeStackNavigationProp<GameNavigation>;
 
